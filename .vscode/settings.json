@@ -1,0 +1,16 @@
+{
+	"files.associations": {
+		"chrono": "cpp",
+		"cmath": "cpp",
+		"cstdarg": "cpp",
+		"cstdint": "cpp",
+		"cstdio": "cpp",
+		"cstdlib": "cpp",
+		"ctime": "cpp",
+		"ratio": "cpp",
+		"type_traits": "cpp",
+		"limits": "cpp",
+		"*.tcc": "cpp",
+		"typeinfo": "cpp"
+	}
+}

@@ -1,0 +1,40 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++.exe kompiluj i debuguj cały folder, bez optymalizacji",
+            "command": "C:\\minGW\\bin\\g++.exe",
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false,
+            },
+            "icon": {
+                "color": "terminal.ansiCyan"
+            },
+            "args": [
+                "-fdiagnostics-color=always",
+                //"-O1",
+                "-g",
+                "${fileDirname}/**.cpp",
+                "-o",
+                "${fileDirname}\\main.exe"
+            ],
+            "options": {
+                "cwd": "C:\\minGW\\bin",
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Zadanie wygenerowane przez debuger."
+        }
+    ],
+    "version": "2.0.0"
+}
