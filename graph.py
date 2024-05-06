@@ -52,6 +52,8 @@ if __name__ == "__main__":
 	print(data_gs)
 	print(data_lu)
 	x_axis = [100, 500, 1000, 2000, 3000, 5000]
+	for i in range(len(x_axis)):
+		print(f"\"{x_axis[i]}\", \"{data_j[i]}\", \"{data_gs[i]}\", \"{data_lu[i]}\",")
 	plt.plot(x_axis, data_j, label="Jacobi")
 	plt.plot(x_axis, data_gs, label="Gauss-Seidel")
 	plt.plot(x_axis, data_lu, label="LU")

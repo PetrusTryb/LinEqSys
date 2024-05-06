@@ -135,11 +135,9 @@ double solve_LU(Matrix& A, Matrix& b){
 	return elapsed.count();
 }
 
-int main()
+int main(int argc, char* argv[])
 {
 	const int index[] = {1,9,3,5,5,7};
-	//const int index[] = {1,9,3,3,2,8};
-	//const int index[] = {1,9,3,0,4,4};
 	//Zadanie A
 	int a1 = 5+index[3];
 	int a2 = -1;
@@ -163,12 +161,12 @@ int main()
 	//Zadanie B
 	auto jacobi1_err = solve_Jacobi(A, b, 1e-9);
 	auto gs1_err = solve_GaussSeidel(A, b, 1e-9);
-	FILE* output_file = fopen("C:\\Users\\Ptryb\\LinEqSys\\B_jacobi.txt", "w");
+	FILE* output_file = fopen("./B_jacobi.txt", "w");
 	for(int i = 1; i<jacobi1_err.size(); i++){
 		fprintf(output_file, "%e\n", jacobi1_err[i]);
 	}
 	fclose(output_file);
-	output_file = fopen("C:\\Users\\Ptryb\\LinEqSys\\B_gauss_seidel.txt", "w");
+	output_file = fopen("./B_gauss_seidel.txt", "w");
 	for(int i = 1; i<gs1_err.size(); i++){
 		fprintf(output_file, "%e\n", gs1_err[i]);
 	}
@@ -185,12 +183,12 @@ int main()
 	A2.fillDiagonal(-2, a3);
 	auto jacobi2_err = solve_Jacobi(A2, b, 1e-9);
 	auto gs2_err = solve_GaussSeidel(A2, b, 1e-9);
-	output_file = fopen("C:\\Users\\Ptryb\\LinEqSys\\C_jacobi.txt", "w");
+	output_file = fopen("./C_jacobi.txt", "w");
 	for(int i = 1; i<jacobi2_err.size(); i++){
 		fprintf(output_file, "%e\n", jacobi2_err[i]);
 	}
 	fclose(output_file);
-	output_file = fopen("C:\\Users\\Ptryb\\LinEqSys\\C_gauss_seidel.txt", "w");
+	output_file = fopen("./C_gauss_seidel.txt", "w");
 	for(int i = 1; i<gs2_err.size(); i++){
 		fprintf(output_file, "%e\n", gs2_err[i]);
 	}
@@ -198,12 +196,12 @@ int main()
 	//Zadanie D
 	solve_LU(A2, b);
 	//Zadanie E
-	auto output_j = fopen("C:\\Users\\Ptryb\\LinEqSys\\E_jacobi.txt", "w");
-	auto output_gs = fopen("C:\\Users\\Ptryb\\LinEqSys\\E_gauss_seidel.txt", "w");
-	auto output_lu = fopen("C:\\Users\\Ptryb\\LinEqSys\\E_lu.txt", "w");
+	auto output_j = fopen("./E_jacobi.txt", "w");
+	auto output_gs = fopen("./E_gauss_seidel.txt", "w");
+	auto output_lu = fopen("./E_lu.txt", "w");
 	int sizes[] = {100,500,1000,2000,3000,5000};
 	a1 = 5+index[3];
-	for(int i = 0; i<6; i++){
+	for(int i = 0; i<3; i++){
 		a1 = 5+index[3];
 		N = sizes[i];
 		Matrix A3(N,N);
